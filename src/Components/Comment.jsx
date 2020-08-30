@@ -1,13 +1,23 @@
 import React from "react";
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-></link>;
 
-function Comment() {
-  return <div>
-
-
-  </div>;
+function Comment(props) {
+  return (
+    <div className="ui container comments">
+      <div className="comment">
+        <a href="/" className="avatar">
+          <img alt="avatar" src={props.avatar} />
+        </a>
+        <div className="content">
+          <a href="/" className="author">
+            {props.author}
+          </a>
+          <div className="metadata">
+            <span className="date">{props.timeAgo}</span>
+          </div>
+          <div className="text">{props.content}</div>
+        </div>
+      </div>
+    </div>
+  );
 }
-export default Comment 
+export default Comment;
